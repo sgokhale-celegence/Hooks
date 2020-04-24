@@ -4,7 +4,8 @@ import React from "react";
 // import CounterClass from "./withClasses/Counter";
 // import LoginClass from './withClasses/Login';
 
-import ExampleUseEffect from "./Hooks/SideEffects";
+// import ExampleUseEffect from "./Hooks/SideEffects";
+import ExampleUseEffect from "./Hooks/SideEffectsWithDependencies";
 import "./styles.css";
 
 export default function App() {
