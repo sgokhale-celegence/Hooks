@@ -1,6 +1,8 @@
 import React from "react";
 import Counter from "./Hooks/Counter";
+import Login from "./Hooks/Login";
 import CounterClass from "./withClasses/Counter";
+import LoginClass from './withClasses/Login';
 import "./styles.css";
 
 export default function App() {
@@ -11,6 +13,10 @@ export default function App() {
       <Counter />
       <hr />
       <CounterClass />
+      <hr />
+      <Login />
+      <hr />
+      <LoginClass />
     </div>
   );
 }
