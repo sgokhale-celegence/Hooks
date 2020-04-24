@@ -7,8 +7,9 @@ export default function Login() {
       Hello : {loggedInUser} <br />
       <button
         onClick={() => {
+          const userName = loggedInUser === "Guest" ? "Prime" : "Guest";
           setIsLoggedIn(!isLoggedIn);
-          setloggedInUser("Prime");
+          setloggedInUser(userName);
         }}
       >
         {isLoggedIn ? "Logout" : "Login"}
