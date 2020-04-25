@@ -15,12 +15,15 @@ export default function PassingProps() {
     </>
   );
 }
-
 function DisplayName({ fname, lname }) {
   const [name, setName] = useState({
     fname,
     lname
   });
+
+  useEffect(() => {
+    setName(name => ({ ...name, fname: fname, lname: lname }));
+  }, [fname, lname]);
 
   return (
     <>
