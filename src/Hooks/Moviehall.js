@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 
 function SideEffectsWithDependencies() {
   const [isMovieHallOpen, setIsMovieHallOpen] = useState(false);
-  const [isProjectorOn, setIsProjectorOn] = useState(true);
-  const [admitNewBatch, setAdmitNewBatch] = useState(1);
+  const [isProjectorOn, setIsProjectorOn] = useState(false);
 
   useEffect(() => {
-    console.log("Verify Projector Status");
-  });
+    console.log("Projector is On : -->" + isProjectorOn.toString());
+    // return () => {
+    //   console.log("Projector Cleaning Up");
+    // };
+  }, [isProjectorOn]);
 
-  // useEffect(() => {
-  //   console.log("in side Use Effect - For Logged In User");
-  // });
   // console.log("Just Before Render");
   return (
     <div>
@@ -29,11 +28,38 @@ function SideEffectsWithDependencies() {
         {isMovieHallOpen ? "Close" : "Open"} Movie Hall
       </button>
       <br /> <br />
+      {isMovieHallOpen && <AdmitFans />}
+      <br /> <br /> <br /> <br />
+    </div>
+  );
+}
+
+function AdmitFans() {
+  const [admitNewBatch, setAdmitNewBatch] = useState(1);
+  const [userId, setUserId] = useState("0");
+
+  useEffect(() => {
+    const URL = "https://jsonplaceholder.typicode.com/todos/" + admitNewBatch;
+    fetch(URL)
+      .then(response => response.json())
+      .then(data => {
+        setUserId(data.id);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+    console.log("Admitted New Batch - For Logged In User");
+    // return () => {
+    //   console.log("Seating Cleaning Up");
+    // };
+  }, [admitNewBatch]);
+  return (
+    <>
+      User ID (From Service) {userId}
       <button onClick={() => setAdmitNewBatch(admitNewBatch + 1)}>
         Admit Batch - {admitNewBatch}
       </button>
-      <br /> <br /> <br /> <br />
-    </div>
+    </>
   );
 }
 
