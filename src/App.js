@@ -3,10 +3,11 @@ import React from "react";
 // import Login from "./Hooks/Login";
 // import CounterClass from "./withClasses/Counter";
 // import LoginClass from './withClasses/Login';
-
 // import ExampleUseEffectClass from "./withClasses/SideEffects";
 // import ExampleUseEffect from "./Hooks/SideEffects";
 // import ExampleUseEffect from "./Hooks/SideEffectsWithDependencies";
+import PassingProps from "./Hooks/PassingProps";
+
 import Moviehall from "./Hooks/Moviehall";
 export default function App() {
   return (
@@ -20,8 +21,9 @@ export default function App() {
       <Login />
       <hr />
       <LoginClass /> */}
-      <Moviehall />
       {/* <ExampleUseEffect /> */}
+      {/* <Moviehall /> */}
+      <PassingProps />
     </div>
   );
 }
