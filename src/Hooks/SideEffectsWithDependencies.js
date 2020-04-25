@@ -8,7 +8,7 @@ export default function SideEffectsWithDependencies() {
   }, [isLoggedIn]);
 
   useEffect(() => {
-    console.log("inside Use Effect - For Logged In User");
+    console.log("in side Use Effect - For Logged In User");
   });
 
   return (

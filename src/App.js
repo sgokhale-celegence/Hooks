@@ -4,11 +4,10 @@ import React from "react";
 // import CounterClass from "./withClasses/Counter";
 // import LoginClass from './withClasses/Login';
 
-import ExampleUseEffectClass from "./withClasses/SideEffects";
+// import ExampleUseEffectClass from "./withClasses/SideEffects";
 // import ExampleUseEffect from "./Hooks/SideEffects";
 // import ExampleUseEffect from "./Hooks/SideEffectsWithDependencies";
-import "./styles.css";
-
+import Moviehall from "./Hooks/Moviehall";
 export default function App() {
   return (
     <div className="App">
@@ -21,7 +20,7 @@ export default function App() {
       <Login />
       <hr />
       <LoginClass /> */}
-      <ExampleUseEffectClass />
+      <Moviehall />
       {/* <ExampleUseEffect /> */}
     </div>
   );
